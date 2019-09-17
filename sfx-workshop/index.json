@@ -47,16 +47,19 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "background.sh"
     },
     "finish": {
       "text": "finish.md"
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
+    "imageid": "kubernetes-cluster-running",
+    "reuseConnection": true,
+    "livetime": "4h"
   }
 }
