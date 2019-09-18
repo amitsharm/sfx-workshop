@@ -1,12 +1,16 @@
-SignalFx provides open and flexible instrumentation for monitoring your services. SignalFx agent uses an access token to authenticate with the SignalFx API. 
+SignalFx provides open and flexible instrumentation for monitoring your services. You can use Helm to deploy and manage SignalFx agent on your Kubernetes cluster. Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
+
+* Install SignalFx Helm Chart 
+`helm repo add signalfx http://dl.signalfx.com/helm-repo`{{copy}}
+SignalFx agent uses an access token to authenticate with the SignalFx API. 
 
 * Copy your Access Token from the provided SignalFx account details card  and export it as an environment variable: <br/>
 `export MY_ACCESS_TOKEN=<your-access-token>`{{copy}}
 
-* Create a `Secret` with your access token: <br/>
-`kubectl create secret generic --from-literal access-token=MY_ACCESS_TOKEN signalfx-agent`{{copy}}
+* Install SignalFx agent as a DaemonSet using Helm chart: <br/>
+`helm install --set signalFxAccessToken=MY_ACCESS_TOKEN --set clusterName=My_K8s_Cluster --set signalFxRealm=us1  signalfx/signalfx-agent`{{copy}}
 
-* Ensure your secret is configured as expected. You should have 32 bytes of secret data in the key `token` in an `Opaque` secret.
+* Ensure your Kubernetes objects are created as expected. First the secret. You should have 32 bytes of secret data in the key `token` in an `Opaque` secret.
 
 <details>
 <summary>Hint</summary>
