@@ -1,8 +1,11 @@
 SignalFx provides open and flexible instrumentation for monitoring your services. You can use Helm to deploy and manage SignalFx agent on your Kubernetes cluster. Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
 
 * Install SignalFx Helm Chart 
-`helm repo add signalfx http://dl.signalfx.com/helm-repo`{{copy}}
+`helm repo add signalfx https://dl.signalfx.com/helm-repo`{{copy}}
 SignalFx agent uses an access token to authenticate with the SignalFx API. 
+
+* Ensure the latest copy of the repository:
+`helm repo update`{{copy}}
 
 * Copy your Access Token from the provided SignalFx account details card  and export it as an environment variable: <br/>
 `export MY_ACCESS_TOKEN=<your-access-token>`{{copy}}
