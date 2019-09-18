@@ -8,7 +8,7 @@ SignalFx agent uses an access token to authenticate with the SignalFx API.
 `export MY_ACCESS_TOKEN=<your-access-token>`{{copy}}
 
 * Install SignalFx agent as a DaemonSet using Helm chart: <br/>
-`helm install --set signalFxAccessToken=MY_ACCESS_TOKEN --set clusterName=My_K8s_Cluster --set signalFxRealm=us1  signalfx/signalfx-agent`{{copy}}
+`helm install --set signalFxAccessToken=0BDn_y4BabezAzOstVEdIQ --set clusterName=K8sCluster --set signalFxRealm=us1 signalfx/signalfx-agent`{{copy}}
 
 * Ensure your Kubernetes objects are created as expected. First the secret. You should have 32 bytes of secret data in the key `token` in an `Opaque` secret.
 
